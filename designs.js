@@ -5,6 +5,7 @@
  $(function(){
  	$('form').hide().delay(6000).fadeIn(3500);
  	$('.color-content').hide();
+  $('button').hide();
  	$('h1').hide().delay(4300).show(5);
     $('body').prepend('<div id="hint"><h3 id="hint-header">Pixel Art Maker</h3><div id="hint-message">Create pixel art right in your browser🎆🎇🎊</div></div>');
     $('#hint-message').show().delay(2300).fadeOut(2000);
@@ -49,5 +50,16 @@ $('form').submit(makeGrid).one('submit', function(){
 $('table').on('click', '.tableData', function(){
     const attr = $(this).attr('style');
     typeof attr === "undefined" || typeof attr === "boolean" ? (  $(this).css({ 'background-color' : $('#colorPicker').val() }) ) : ( $(this).removeAttr('style') );
+    $('button').show();
 });
 
+//use html2canvas to save art
+$('button').click(function() {
+     html2canvas($('#pixelCanvas'), {
+        onrendered: function(canvas) {
+          const img = canvas.toDataURL("image/png");
+          const link = img.replace(/^data:image\/png/, "data:application/octet-stream");
+           $('a').attr('download','My_Art.png').attr('href', link);
+        }
+     });
+});
