@@ -1,7 +1,7 @@
           /*body*/
 body {
     text-align: center;
-    background: linear-gradient(to right, rgb(250, 234, 197), rgb(238, 180, 45) );
+    background: linear-gradient(to right, #faeac5, #eeb42d );
 }
 
           /*header*/
@@ -9,7 +9,7 @@ h1 {
     font-family: Monoton;
     font-size: 70px;
     margin: 0.2px;
-    animation: h1-animation 5s linear;
+    animation: h1-animation 2s linear;
 }
 
 h2 {
@@ -103,7 +103,7 @@ input[type=submit]:active, input[type=submit]:focus {
     text-indent: -5px;
     background-color: #b9e4e3;
     border-radius: 10px;
-    box-shadow: -5px 2px 2px -5px #777;
+    box-shadow: -5px -5px 2px -5px #777;
     }
     to {
        font-size: 15px;
@@ -134,6 +134,7 @@ td {
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    box-shadow: 0 0 15px #666;
 }
 
 tr {

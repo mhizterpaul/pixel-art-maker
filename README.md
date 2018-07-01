@@ -11,8 +11,7 @@ This is a Front End Development Project from *Udacity* in collaboration with _AL
 
 Pixel Art Maker Allows you to create pixel art in your browser:
 * **To use** :
-* Copy this link: https://mhizterpaul.github.io/PixelArtMaker/
-* Paste into browser and enter.
+* Follow this link https://mhizterpaul.github.io/PixelArtMaker/
 * Enter a size for your canvas.
 * Choose a Color.
 * Apply color to Grid cells.

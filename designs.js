@@ -3,7 +3,7 @@
 
 // add some jQuery animation on page load
  $(function(){
- 	$('form').hide().delay(9000).fadeIn(4800);
+ 	$('form').hide().delay(6000).fadeIn(3500);
  	$('.color-content').hide();
  	$('h1').hide().delay(4300).show(5);
     $('body').prepend('<div id="hint"><h3 id="hint-header">Pixel Art Maker</h3><div id="hint-message">Create pixel art right in your browser🎆🎇🎊</div></div>');
@@ -47,9 +47,7 @@ $('form').submit(makeGrid).one('submit', function(){
 
 //set color of grid cells to  #colorPicker value on click
 $('table').on('click', '.tableData', function(){
-	$(this).css({
-		'background-color' : $('#colorPicker').val()
-	});
+    const attr = $(this).attr('style');
+    typeof attr === "undefined" || typeof attr === "boolean" ? (  $(this).css({ 'background-color' : $('#colorPicker').val() }) ) : ( $(this).removeAttr('style') );
 });
 
-    
