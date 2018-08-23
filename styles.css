@@ -3,6 +3,7 @@ body {
     text-align: center;
     font: 15px sans-serif;
     background: fixed border-box linear-gradient(135deg, #eeb42d 9%, #faeac5 47%, #eeb42d 91% ) no-repeat center/100% 180vh;
+    background: linear-gradient(to right, #faeac5, #eeb42d );
 }
 
           /*header*/
@@ -24,6 +25,8 @@ body div.flex-container {
     justify-content: center;
     align-content: center;
     margin-bottom: 20px;
+    margin: 0.2px;
+    animation: h1-animation 2s linear;
 }
 
 
@@ -223,10 +226,11 @@ td {
     border-color: black white white black;
 }
 
+
 a {
     text-decoration: none;
     color: white;
-    line-height: 1em;
+    vertical-align: -2px;
 }
 
           /* Hint */
@@ -289,3 +293,8 @@ div#hint p {
         left: -540%;
     }
 }
+#hint-message {
+    font-size: 20px;
+    font-weight: bold;
+}
+

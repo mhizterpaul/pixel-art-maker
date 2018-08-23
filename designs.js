@@ -3,27 +3,9 @@
 
 //declare required variables
 const el = $('input[name=width]');
-  let maxWidth;
-
-
-// add some jQuery animation on page load
- $(function(){
- 	tableWidth();
- 	$('form').hide().delay(6000).fadeIn(3500);
- 	$('.color-content').hide();
-  $('#download-button').hide();
- 	$('h1').hide().delay(4300).show(5);
-  $('.hint').hide().delay(6500).show(500);
-    $('body').prepend('<div id="hint"><h3 id="hint-header">Pixel Art Maker</h3><p>....Activate the creative genius in YOU🎆🎇</p></div>');
-    $('#hint>p').show().delay(2300).fadeOut(2000);
-    $('#hint>p').queue(function(){
-            $('#hint').remove();
-            $(this).dequeue();
-    });
- });
+let maxWidth;
 
 // CREATE MAX WIDTH DEPENDING ON WIDTH OF USER'S DEVICE
-
 const tableWidth = function(){
   if (window.innerWidth < 320 ) {
     maxWidth= '25';
@@ -41,6 +23,22 @@ const tableWidth = function(){
   el.attr('max', maxWidth);   
 };
 
+// add some jQuery animation on page load
+ $(function(){
+ 	tableWidth();
+ 	$('form').hide().delay(6000).fadeIn(3500);
+ 	$('div.color-content').hide();
+  $('#download-button').hide();
+ 	$('h1').hide().delay(4300).show(5);
+  $('div.hint').hide().delay(6500).show(500);
+    $('body').prepend('<div id="hint"><h3 id="hint-header">Pixel Art Maker</h3><p>....Activate the creative genius in YOU🎆🎇</p></div>');
+    $('#hint>p').show().delay(2300).fadeOut(2000);
+    $('#hint>p').queue(function(){
+            $('#hint').hide();
+            $('#hint').remove();
+            $(this).dequeue();
+    });
+ });
 
 
 // Select color input
