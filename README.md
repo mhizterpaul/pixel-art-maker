@@ -15,6 +15,8 @@ Pixel Art Maker Allows you to create pixel art in your browser:
 * Enter a size for your canvas.
 * Choose a Color.
 * Apply color to Grid cells.
+by either clicking grid cells or pressing down mouse and moving through grid cells
+* On completion click save to download your art.
 
 ## Contributing
 

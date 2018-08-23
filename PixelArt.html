@@ -4,20 +4,25 @@
     <meta charset="utf-8">
     <title>Pixel Art Maker!</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 </head>
 <body>
+	<div class ="flex-container">
         <h1>Pixel Art Maker</h1>
+        <div class="hint">?</div>
+    </div>
         <form id="sizePicker" action="#">
             <h2>Pick a size for your canvas</h2>
             <div class= "form-space">
                 <label for="inputHeight">Grid Height:</label>
-                <input type="number" id="inputHeight" name="height" min="1" value="1">
+                <input type="number" id="inputHeight" name="height" min="1" max="150" value="1">
             </div>
             <div class= "form-space">
                 <label for="inputWidth">Grid Width:</label>
-                <input type="number" id="inputWidth" name="width" min="1" value="1">
+                <input type="number" id="inputWidth" name="width" min="1"  value="1">
             </div>
             <div class = "submit">
                 <input type="submit" value="submit">
@@ -27,8 +32,8 @@
         <label for="colorPicker" >Stain your brush:</label>
         <input type="color" id="colorPicker" >
     </div>
-    <table id="pixelCanvas"></table>
-
+    <table id="pixelCanvas" draggable="false"></table>
+    <div id='download-button'><a href="#">save</a></div>
     <script src="designs.js"></script>
 </body>
 </html>

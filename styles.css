@@ -1,29 +1,45 @@
           /*body*/
 body {
     text-align: center;
-    background: linear-gradient(to right, #faeac5, #eeb42d );
+    font: 15px sans-serif;
+    background: fixed border-box linear-gradient(135deg, #eeb42d 9%, #faeac5 47%, #eeb42d 91% ) no-repeat center/100% 180vh;
 }
 
           /*header*/
 h1 {
     font-family: Monoton;
-    font-size: 70px;
-    margin: 0.2px;
+    font-size: 1.9em;
+    white-space: nowrap;
     animation: h1-animation 2s linear;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    margin-left: 15px;
 }
+
+body div.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
 
 h2 {
     margin: 1px 0px 0.25px;
 }
 
 h2:first-of-type {
-	font-size: 25px;
+	font-size: 1.4em;
 	font-weight: normal;
     margin-top: 0.5px;
 }
 
 @keyframes h1-animation {
     0% {
+        text-indent: 0;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -31,29 +47,63 @@ h2:first-of-type {
     }
 
     25% {
+        text-indent: 0;
         position: absolute;
         top: 37.5%;
         left: 50%;
         transform: translate(-50%, -37.5%);
     }
     50% {
+        text-indent: 0;
         position: absolute;
         top: 25%;
         left: 50%;
         transform: translate(-50%, -25%);
     }
     75% {
+        text-indent: 0;
         position: absolute;
         top: 12.5%;
         left: 50%;
         transform: translate(-50%, -12.5%);
     }
     100% {
+        text-indent: 0;
         position: absolute;
         top: 0%;
         left: 50%;
         transform: translate(-50%, -1%);
     }
+}
+
+div.hint {
+    font: 1em heveltica, sans-serif;
+    border-radius: 50%;
+    border: 3px solid black;
+    font-weight: bold;
+    position: relative;
+    padding: 0 0.35em;
+    text-indent: -1px;
+    width: 0.5em;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 11.3px;
+    box-shadow: 0 0 5px;
+}
+
+div.hint:hover::after {
+    content: "click grid cells to fill with color. You can also press down mouse and move through grid cells to conveniently fill larger areas quicker";
+    font-size: 0.7em;
+    border-radius: 4px;
+    outline: 2px solid white;
+    border: 5px groove red;
+    width: 140px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 120%;
+    left: -800%;
 }
 
           /*ColorPicker*/
@@ -64,17 +114,16 @@ h2:first-of-type {
 }          
 
 input[type=color] {
-    padding: 5px;
+	padding: 0.3em;
+    border: 1px solid #b9e4e3; 
     border-radius: 20px;
-    border-color: #b9e4e3;
-    width: 20px;
-    height: 20px;
     background: linear-gradient(to right, red, orange, yellow, green, violet, blue, indigo);
+    width: 1.8em;
 }
 
           /*Form*/
 input[type=number] {
-    width: 6.4em;
+    width: 6.5em;
     border-radius: 10px;
 }
 
@@ -120,15 +169,24 @@ input[type=submit]:active, input[type=submit]:focus {
     padding:5px;
     display: inline-block;
     margin: 5px;
-    text-align: left;
     font-weight: bold;
-}          
+}
+label[for="colorPicker"] {
+	background-image: linear-gradient(to right, red, orange, yellow, green, violet, blue, indigo);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}        
 
           /*Table*/
 table,
 tr,
 td {
     border: 1px solid black;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 table {
@@ -145,6 +203,32 @@ td {
     width: 20px;
 }
 
+
+    /* Button */
+
+#download-button {
+    background-color: silver;
+    border-radius: 15px;
+    width: 55px;
+    height: 27px;
+    font-size: 1.2em;
+    margin: 20px auto;
+    border: 2px outset;
+    border-color: white black black white;
+
+}
+
+#download-button:active {
+    border: 2px inset;
+    border-color: black white white black;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    line-height: 1em;
+}
+
           /* Hint */
 
 #hint{
@@ -157,11 +241,51 @@ td {
 
 #hint-header {
     font-family: Monoton;
-    font-size: 70px;
+    font-size: 1.8em;
     margin: 0.2px;
+    white-space: nowrap;
 }
 
-#hint-message {
-    font-size: 20px;
-    font-weight: bold;
+div#hint p {
+    font: 1.3em serif;
+}
+
+
+
+                   /*RESPONSIVE STYLES*/
+
+@media screen and (min-width: 440px) and (max-width: 706px) {
+    h1{
+        font-size: 2.5em;
+        text-indent: calc(0.3em + 11.3px);
+    }
+    #hint-header {
+    font-size: 2.5em;
+    }
+
+}
+
+
+@media screen and (min-width: 707px) {
+    body {
+    font-size: 17px;
+    }
+    h1{
+        font-size: 3.8em;
+        text-align: center;
+        text-indent: calc(0.3em + 50px);
+    }
+
+    #hint-header {
+    font-size: 3.8em;
+    }
+
+    div.hint {
+        margin-right: 50px;
+    }
+    div.hint:hover::after {
+        font-size: 0.75em;
+        width: 150px;
+        left: -540%;
+    }
 }
