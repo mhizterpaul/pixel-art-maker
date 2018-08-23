@@ -1,6 +1,6 @@
 # Pixel Art Maker
 
-This is a Front End Development Project from *Udacity* in collaboration with _ALC_
+This is a Front End Development Project from *Udacity* in collaboration with _Andela_ and _Google_
 
 ## Table of Contents
 
@@ -15,11 +15,8 @@ Pixel Art Maker Allows you to create pixel art in your browser:
 * Enter a size for your canvas.
 * Choose a Color.
 * Apply color to Grid cells.
-<<<<<<< HEAD
 by either clicking grid cells or pressing down mouse and moving through grid cells
-=======
 by either clicking grid cells or pressing down mouse and hovering over grid cells
->>>>>>> 07c0417aef0e1cc498abc7e34b57e4e31740f854
 * On completion click save to download your art.
 
 ## Contributing
