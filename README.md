@@ -1,7 +1,5 @@
 # Pixel Art Maker
 
-This is a Front End Development Project from *Udacity* in collaboration with _Andela_ and _Google_
-
 ## Table of Contents
 
 * [Instructions](#instructions)
